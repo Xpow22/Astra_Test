@@ -22,7 +22,19 @@ const index = () => {
   })
 
   const columns: GridColDef[] = [
-    { field: 'name', headerName: 'Name', width: 400, renderCell: (params) => <div onClick={() => handleRowClick(params)}>{params.value}</div> },
+    {
+      field: 'name',
+      headerName: 'Name',
+      width: 400,
+      renderCell: (params) => (
+        <div
+          onClick={() => handleRowClick(params)}
+          style={{ cursor: 'pointer' }}
+        >
+          {params.value}
+        </div>
+      ),
+    },
     { field: 'web_pages', headerName: 'Website', width: 250 },
   ];
 
